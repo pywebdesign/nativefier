@@ -53,19 +53,6 @@ function createMainWindow(options, onAppQuit, setDockBadge) {
 
     mainWindowState.manage(mainWindow);
 
-    // after first run, no longer force full screen to be true
-    if (options.fullScreen) {
-        options.fullScreen = undefined;
-        fs.writeFileSync(path.join(__dirname, '..', 'nativefier.json'), JSON.stringify(options));
-    }
-
-    // after first run, no longer force maximize to be true
-    if (options.maximize) {
-        mainWindow.maximize();
-        options.maximize = undefined;
-        fs.writeFileSync(path.join(__dirname, '..', 'nativefier.json'), JSON.stringify(options));
-    }
-
     let currentZoom = 1;
 
     const onZoomIn = () => {
