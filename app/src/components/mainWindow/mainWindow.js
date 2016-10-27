@@ -66,6 +66,7 @@ function createMainWindow(options, onAppQuit, setDockBadge) {
         fs.writeFileSync(path.join(__dirname, '..', 'nativefier.json'), JSON.stringify(options));
     }*/
 
+
     let currentZoom = 1;
 
     const onZoomIn = () => {
